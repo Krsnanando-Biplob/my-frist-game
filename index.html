@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>text</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./tailwind.config.js">
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body class="">
@@ -31,13 +32,12 @@
     </div>
 
 
-
     <!-- home screen -->
     <section id="home-screen" class=" flex uppercase text-white justify-center min-h-screen items-center  ">
       <div class="flex flex-col gap-10 items-center justify-center">
         <h1 class="text-2xl lg:text-6xl font-extrabold anton-regular text-[#fff]">ALPHABET CLASH</h1>
       <p class="lowercase  text-center text-xl p-2">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
-      <button onclick="play()" class="btn bg-white text-xl px-6 text-black font-bold">Play</button>
+      <button  onclick="play()" class="btn bg-white text-xl px-6 text-black font-bold">Play</button>
       </div>
     </section>
     <!-- play gorund section -->
@@ -45,13 +45,14 @@
       <!-- art board -->
       <div class="flex lg:w-auto w-screen items-center ">
 
-        <div class="artboard border-[17px] gap-[20px] border-[#010313CC] bg-[#fefefbB3] rounded-xl artboard-horizontal phone-6">
+        <div class="artboard border-[17px] gap-[20px] border-[#010313CC] bg-[#fefefbDB] rounded-xl artboard-horizontal phone-6">
           <div class="flex justify-center ">
             <p class="bg-[#010313CC] px-6 pb-4 text-white rounded-b-xl ">Don't watch keyboard  while playing...</p>
           </div>
   
             <div class="justify-center flex h-full items-center">
-              <div><p class="text-black font-bold text-7xl">Y</p>
+              <div>
+               <p id="curent-Alpabet" class="text-black uppercase  font-bold px-10 py-7 kbd rounded-lg text-5xl">Y</p>
               </div>
             </div>
           </div>
@@ -59,38 +60,50 @@
       </div>
       <!-- keyvord -->
       <div class="">
-        <div class="flex justify-center gap-0.5 lg:gap-1 lg:w-full my-1 mx-auto ">
-          <kbd class="kbd">q</kbd>
-          <kbd class="kbd">w</kbd>
-          <kbd class="kbd">e</kbd>
-          <kbd class="kbd">r</kbd>
-          <kbd class="kbd">t</kbd>
-          <kbd class="kbd">y</kbd>
-          <kbd class="kbd">u</kbd>
-          <kbd class="kbd">i</kbd>
-          <kbd class="kbd">o</kbd>
-          <kbd class="kbd">p</kbd>
-        </div> 
+       <div class="flex justify-center items-center gap-1 my-1 mx-auto">
+        <kbd onclick="keyBordPress()" id="1" class="kbd lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">1</kbd>
+        <kbd onclick="curentAla()"  id="2" class="kbd lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">2</kbd>
+        <kbd onclick="curentAla()"  id="3" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">3</kbd>
+        <kbd onclick="curentAla()"  id="4" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">4</kbd>
+        <kbd onclick="curentAla()"  id="5" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">5</kbd>
+        <kbd onclick="curentAla()"  id="6" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">6</kbd>
+        <kbd onclick="curentAla()"  id="7" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">7</kbd>
+        <kbd onclick="curentAla()"  id="8" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">8</kbd>
+        <kbd id="9" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">9</kbd>
+        <kbd onclick="curentAla()"  id="0" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">0</kbd>
+       </div>
+        <div   class="flex justify-center items-center text-center gap-1 my-1 mx-auto ">
+          <kbd onclick="curentAla()"  id="q" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">q</kbd>
+          <kbd onclick="curentAla()"  id="w" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">w</kbd>
+          <kbd onclick="curentAla()"  id="e" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">e</kbd>
+          <kbd onclick="curentAla()"  id="r" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">r</kbd>
+          <kbd onclick="curentAla()"  id="t" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">t</kbd>
+          <kbd onclick="curentAla()"  id="y" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">y</kbd>
+          <kbd onclick="curentAla()"  id="u" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">u</kbd>
+          <kbd onclick="curentAla()"  id="i" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">i</kbd>
+          <kbd onclick="curentAla()"  id="o" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">o</kbd>
+          <kbd onclick="curentAla()"  id="p" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">p</kbd>
+        </div>
         <div class="flex justify-center gap-1 my-1 w-full">
-          <kbd class="kbd">a</kbd>
-          <kbd class="kbd">s</kbd>
-          <kbd class="kbd">d</kbd>
-          <kbd class="kbd">f</kbd>
-          <kbd class="kbd">g</kbd>
-          <kbd class="kbd">h</kbd>
-          <kbd class="kbd">j</kbd>
-          <kbd class="kbd">k</kbd>
-          <kbd class="kbd">l</kbd>
-        </div> 
-        <div class="flex justify-center gap-1 my-1 w-full">
-          <kbd class="kbd">z</kbd>
-          <kbd class="kbd">x</kbd>
-          <kbd class="kbd">c</kbd>
-          <kbd class="kbd">v</kbd>
-          <kbd class="kbd">b</kbd>
-          <kbd class="kbd">n</kbd>
-          <kbd class="kbd">m</kbd>
-          <kbd class="kbd">/</kbd>
+          <kbd onclick="curentAla()"  id="a" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">a</kbd>
+          <kbd onclick="curentAla()"  id="s" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">s</kbd>
+          <kbd onclick="curentAla()"  id="d" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">d</kbd>
+          <kbd onclick="curentAla()"  id="f" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">f</kbd>
+          <kbd onclick="curentAla()"  id="g" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">g</kbd>
+          <kbd onclick="curentAla()"  id="h" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">h</kbd>
+          <kbd onclick="curentAla()"  id="j" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">j</kbd>
+          <kbd onclick="curentAla()"  id="k" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">k</kbd>
+          <kbd onclick="curentAla()"  id="l" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">l</kbd>
+        </div>
+         <div class="flex justify-center gap-1 my-1 w-full">
+          <kbd onclick="curentAla()"  id="z" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">z</kbd>
+          <kbd onclick="curentAla()"  id="x" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">x</kbd>
+          <kbd onclick="curentAla()"  id="c" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">c</kbd>
+          <kbd onclick="curentAla()"  id="v" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">v</kbd>
+          <kbd onclick="curentAla()"  id="b" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">b</kbd>
+          <kbd onclick="curentAla()"  id="n" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">n</kbd>
+          <kbd onclick="curentAla()"  id="m" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">m</kbd>
+          <kbd onclick="curentAla()"  id="/" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">/</kbd>
         </div>
       </div>
     </section>
@@ -105,7 +118,7 @@
         <p>Practice will make you Pro</p>
       </div>
     </section>
-    
+
   </main>
   <script src="./go.js"></script>
 </body>
