@@ -46,12 +46,17 @@ function revmoveBgColor(elimentid){
  remBgcol.classList.remove('bg-red-600')
 
 }
-document.addEventListener('keydown', keyBordPress )
+document.addEventListener('keyup', keyBordPress )
 
 function keyBordPress(event){
  console.log(event)
  const playerPressd= event.key
+ console.log(keyBordPress)
+ if(playerPressd==='Escape'){
+  overGame()
 
+ }
+ 
  
  const curentAla=document.getElementById('curent-Alpabet');
  const curenAl= curentAla.innerText;
@@ -121,5 +126,13 @@ function enterPressAlapvet(event){
  const nowAlpavet = document.getElementById(event)
  const textAlpabet=nowAlpavet.innerText;
  return textAlpabet;
+
+}
+
+let display = document.getElementById('curent-Alpabet');
+function applyDisplay(value){
+display.value=value
+console.log(display.value)
+startGame()
 
 }
