@@ -21,12 +21,12 @@
         <button class="btn bg-purple-400 px-4 rounded-full">
           life
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-          <span>1</span>
+          <span id="crunt-life" class="text-xl">3</span>
         </button>
         <button class="btn bg-purple-400 px-4 rounded-full">
           Score
           <i class="fa-solid fa-circle-dollar-to-slot"></i>
-          <span>1</span>
+          <span class="text-xl" id="crunt-score">0</span>
         </button>
       </div>
     </div>
@@ -61,8 +61,8 @@
       <!-- keyvord -->
       <div class="">
        <div class="flex justify-center items-center gap-1 my-1 mx-auto">
-        <kbd onclick="keyBordPress()" id="1" class="kbd lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">1</kbd>
-        <kbd onclick="curentAla()"  id="2" class="kbd lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">2</kbd>
+        <kbd onclick="keyBordPress()" id="1" class=" lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">1</kbd>
+        <kbd onclick="curentAla()"  id="2" class=" lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">2</kbd>
         <kbd onclick="curentAla()"  id="3" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">3</kbd>
         <kbd onclick="curentAla()"  id="4" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">4</kbd>
         <kbd onclick="curentAla()"  id="5" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">5</kbd>
@@ -73,8 +73,8 @@
         <kbd onclick="curentAla()"  id="0" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">0</kbd>
        </div>
         <div   class="flex justify-center items-center text-center gap-1 my-1 mx-auto ">
-          <kbd onclick="curentAla()"  id="q" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">q</kbd>
-          <kbd onclick="curentAla()"  id="w" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">w</kbd>
+          <kbd onclick="startGame()"  id="q" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">q</kbd>
+          <kbd onclick="startGame()"  id="w" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">w</kbd>
           <kbd onclick="curentAla()"  id="e" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">e</kbd>
           <kbd onclick="curentAla()"  id="r" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">r</kbd>
           <kbd onclick="curentAla()"  id="t" class="lg:px-3.5 lg:py-2 px-2 py-0.5 bg-white rounded-lg">t</kbd>
@@ -108,13 +108,14 @@
       </div>
     </section>
         <!-- Score -->
-    <section class="justify-center hidden flex flex-col gap-5 items-center min-h-screen">
+    <section id="fainalScore" class="justify-center hidden flex flex-col gap-5 items-center min-h-screen">
       <div class=" text-white text-center bg-[#ffffff33] p-5 rounded-xl">
+        <h3 class="text-3xl">Game Over!</h3>
         <h1 class="text-6xl my-4">
           <span class="font-extrabold">Score:</span>
-          <span>14</span>
+          <span id="bestScore">0</span>
         </h1>
-        <button class="btn bg-white my-2 font-bold text-black px-5">Play Again</button>
+        <button onclick="play()" class="btn bg-white my-2 font-bold text-black px-5">Play Again</button>
         <p>Practice will make you Pro</p>
       </div>
     </section>

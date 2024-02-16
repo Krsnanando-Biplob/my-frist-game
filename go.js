@@ -35,15 +35,23 @@ function addBgColor(eliment){
  keyBg.classList.add('bg-red-600')
 
 }
+
+function setValue(elimenti, value){
+ const craountValue=document.getElementById(elimenti)
+ craountValue.innerText= value
+}
+
 function revmoveBgColor(elimentid){
  const remBgcol=document.getElementById(elimentid)
  remBgcol.classList.remove('bg-red-600')
 
 }
-document.addEventListener('keyup', keyBordPress)
+document.addEventListener('keydown', keyBordPress )
 
 function keyBordPress(event){
+ console.log(event)
  const playerPressd= event.key
+
  
  const curentAla=document.getElementById('curent-Alpabet');
  const curenAl= curentAla.innerText;
@@ -53,14 +61,42 @@ function keyBordPress(event){
  if(playerPressd === convertTocur){
   console.log('your win');
   revmoveBgColor(convertTocur)
-  startGame();
+
+  const cruntScoree=document.getElementById('crunt-score');
+  const cruntSvalue=cruntScoree.innerText;
+  const CruntScore=parseInt(cruntSvalue)
+  const newScore=CruntScore +1;
+  cruntScoree.innerText=newScore
+
+  startGame()
  }
  else{
   console.log('your a lost')
+  const caruntLife= document.getElementById('crunt-life')
+  const countLife = caruntLife.innerText
+  const CountFile= parseInt(countLife)
+  const newCount=CountFile-1;
+  caruntLife.innerText=newCount
+  if(newCount==-1){
+   overGame()
+   
+  }
+  
  }
 }
 
-
+function overGame(eliment){
+ hiddenScreen('play-ground')
+ hiddenScreen('btn-life')
+ addScreen('fainalScore')
+ const lastScore=document.getElementById('crunt-score')
+ const textLastScore=lastScore.innerText;
+ setValue('bestScore', textLastScore )
+ const againAlpavet= enterPressAlapvet('curent-Alpabet')
+ revmoveBgColor(againAlpavet)
+ 
+ 
+}
 function startGame(){
  const Start =randomAlpabet();
  console.log( Start)
@@ -68,13 +104,22 @@ function startGame(){
  CurentAlpabet.innerText=Start;
  addBgColor(Start);
 
-
 }
 
 
 function play(){
+ hiddenScreen('fainalScore')
  hiddenScreen('home-screen')
  addScreen('play-ground')
  addScreen('btn-life')
  startGame()
+ setValue('crunt-life', 3)
+ setValue('crunt-score', 0)
+
+}
+function enterPressAlapvet(event){
+ const nowAlpavet = document.getElementById(event)
+ const textAlpabet=nowAlpavet.innerText;
+ return textAlpabet;
+
 }
